@@ -4,14 +4,19 @@ import Image from './Images';
 
 const Photos = () => {
   const buttons = ['Food', 'Drinks', 'Events'];
-  const [chosen, setChosen] = useState('');
+  const [chosen, setChosen] = useState('Food');
   const handleClick = (event) => {
     setChosen(event.currentTarget.id);
   };
 
   return (
     <Box my={1} sx={{ flexGrow: 1 }}>
-      <Grid container>
+      <Grid
+        container
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+      >
         {buttons.map((button) => (
           <Grid item xs={4}>
             <Box sx={{ flexGrow: 1 }}>

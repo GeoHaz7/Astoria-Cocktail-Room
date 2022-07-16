@@ -14,13 +14,29 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import logo from '../images/logo.png';
 import { Link } from 'react-router-dom';
-import { ListItemText } from '@mui/material';
+import { createTheme, ListItemText, ThemeProvider } from '@mui/material';
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Photos'];
 const navItemsLink = ['', 'about', 'photos'];
 
 function Navbar(props) {
+  const theme = createTheme({
+    typography: {
+      fontFamily: [
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(','),
+    },
+  });
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -63,19 +79,26 @@ function Navbar(props) {
     <Box sx={{ display: 'flex' }}>
       <AppBar position="sticky" component="nav">
         <Toolbar>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          >
-            Astoria
-          </Typography>
-          <Box
+          <ThemeProvider theme={theme}>
+            <Typography
+              variant="h4"
+              component="div"
+              sx={{
+                fontFamily: 'serif',
+                flexGrow: 1,
+                display: { xs: 'block', sm: 'block' },
+                m: 1,
+              }}
+            >
+              Astoria Cocktail Room
+            </Typography>
+          </ThemeProvider>
+          {/* <Box
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block' }, m: 1 }}
           >
             <img src={logo} alt="logo" height="100vh" />
-          </Box>
+          </Box> */}
           <IconButton
             color="inherit"
             aria-label="open drawer"

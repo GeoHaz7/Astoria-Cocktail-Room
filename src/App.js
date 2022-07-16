@@ -8,6 +8,7 @@ import Error from './pages/Error';
 import './App.css';
 import Photos from './pages/Photos';
 import Images from './pages/Images';
+import Footer from './pages/Footer';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         {/* <Route path="/images" element={<Images />} /> */}
         <Route path="*" element={<Error />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
