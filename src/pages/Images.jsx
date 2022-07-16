@@ -4,6 +4,7 @@ import ImageListItem from '@mui/material/ImageListItem';
 import { Box } from '@mui/system';
 
 export default function Images(props) {
+  const path = props.path;
   function importAll(r) {
     let images = {};
     r.keys().map((item, index) => {
@@ -12,10 +13,10 @@ export default function Images(props) {
     return images;
   }
 
-  console.log(props);
+  console.log(typeof props.path);
 
   const images = props.path
-    ? importAll(require.context(props.path, false, /\.(png|jpe?g|svg)$/))
+    ? importAll(require.context(`../images/food`, false, /\.(png|jpe?g|svg)$/))
     : '';
 
   return (
