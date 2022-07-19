@@ -17,8 +17,8 @@ import { Link } from 'react-router-dom';
 import { createTheme, ListItemText, ThemeProvider } from '@mui/material';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Photos'];
-const navItemsLink = ['', 'about', 'photos'];
+const navItems = ['Home', 'Photos', 'About'];
+const navItemsLink = ['', 'photos', 'about'];
 
 function Navbar(props) {
   const theme = createTheme({
