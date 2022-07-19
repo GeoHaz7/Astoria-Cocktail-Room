@@ -9,21 +9,30 @@ import './App.css';
 import Photos from './pages/Photos';
 import Images from './pages/Images';
 import Footer from './pages/Footer';
+import { Box } from '@mui/material';
 
 function App() {
   return (
-    <Router>
-      <Navbar />
+    <Box
+      sx={{
+        position: 'relative',
+        minHeight: '100vh',
+        paddingBottom: '2.5rem',
+      }}
+    >
+      <Router>
+        <Navbar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/photos" element={<Photos />} />
-        {/* <Route path="/images" element={<Images />} /> */}
-        <Route path="*" element={<Error />} />
-      </Routes>
-      <Footer />
-    </Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/photos" element={<Photos />} />
+          {/* <Route path="/images" element={<Images />} /> */}
+          <Route path="*" element={<Error />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </Box>
   );
 }
 

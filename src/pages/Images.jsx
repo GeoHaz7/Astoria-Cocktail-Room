@@ -22,15 +22,44 @@ export default function Images({ path }) {
     require.context(`../images/Drinks`, false, /\.(png|jpe?g|svg)$/)
   );
 
-  console.log(Events);
+  const breakpoints = {
+    xs: 0,
+    sm: 600,
+    md: 960,
+    lg: 1280,
+    xl: 1920,
+  };
 
+  const getColumns = (width) => {
+    if (width < breakpoints.sm) {
+      return 2;
+    } else if (width < breakpoints.md) {
+      return 3;
+    } else if (width < breakpoints.lg) {
+      return 6;
+    } else if (width < breakpoints.xl) {
+      return 7;
+    } else {
+      return 8;
+    }
+  };
+
+  const [columns, setColumns] = React.useState(getColumns(window.innerWidth));
+  const updateDimensions = () => {
+    setColumns(getColumns(window.innerWidth));
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('resize', updateDimensions);
+    return () => window.removeEventListener('resize', updateDimensions);
+  }, []);
   return (
-    <Box m={5}>
+    <Box m={2}>
       {path === 'Food' && (
         <ImageList
           // style={{ overflow: 'hidden' }}
           // sx={{ width: 500, height: 450 }}
-          cols={2}
+          cols={columns}
         >
           {Object.keys(Food).map(function (key, index) {
             return (
@@ -51,7 +80,7 @@ export default function Images({ path }) {
         <ImageList
           // style={{ overflow: 'hidden' }}
           // sx={{ width: 500, height: 450 }}
-          cols={2}
+          cols={columns}
         >
           {Object.keys(Drinks).map(function (key, index) {
             return (
@@ -71,7 +100,7 @@ export default function Images({ path }) {
         <ImageList
           // style={{ overflow: 'hidden' }}
           // sx={{ width: 500, height: 450 }}
-          cols={2}
+          cols={columns}
         >
           {Object.keys(Events).map(function (key, index) {
             return (

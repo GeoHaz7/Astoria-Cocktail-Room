@@ -10,7 +10,14 @@ const Photos = () => {
   };
 
   return (
-    <Box my={1} sx={{ flexGrow: 1 }}>
+    <Box
+      my={2}
+      sx={{
+        flexGrow: 1,
+        textAlign: 'center',
+      }}
+      justifyContent="space-between"
+    >
       <Grid
         container
         direction="row"

@@ -3,18 +3,17 @@ import {
   Card,
   CardActions,
   CardContent,
-  CardHeader,
   CardMedia,
   Typography,
 } from '@mui/material';
-import { Box, Container } from '@mui/system';
+import { Box } from '@mui/system';
 import React from 'react';
-import background from '../images/292579554_454848309980323_5888373031991334788_n.jpg';
+import background from '../images/background.jpg';
 
 const Home = () => {
   return (
     <Box mx={2}>
-      <Card sx={{ textAlign: 'center', m: 2 }}>
+      <Card sx={{ textAlign: 'center', m: 2, boxShadow: 0 }}>
         {/* <CardHeader
           title="Astoria Cocktail Room
 "
