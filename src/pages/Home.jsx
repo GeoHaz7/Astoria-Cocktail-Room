@@ -8,7 +8,6 @@ import {
 } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
-import background from '../images/background.jpg';
 
 const Home = () => {
   return (
@@ -21,7 +20,7 @@ const Home = () => {
         <CardMedia
           component="img"
           width={100}
-          image={background}
+          image="https://raw.githubusercontent.com/GeoHaz7/Astoria-Cocktail-Room/main/src/images/background.jpg"
           alt="background"
         />
         <CardContent>

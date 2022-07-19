@@ -4,12 +4,10 @@ import {
   CardContent,
   CardHeader,
   CardMedia,
-  Divider,
   Grid,
   Typography,
 } from '@mui/material';
 import React from 'react';
-import cocktail from '../images/astoriaCocktial.jpg';
 import owners from '../images/staff/owners.jpg';
 import rawan from '../images/staff/rawan.jpg';
 import ala from '../images/staff/ala.jpg';
@@ -17,7 +15,41 @@ import celine from '../images/staff/celine.jpg';
 import raed from '../images/staff/raed.jpg';
 import yazan from '../images/staff/yazan.jpg';
 
-const About = (props) => {
+const About = () => {
+  const data = [
+    // {
+    //   name: 'Jubran-Nineveh Kort',
+    //   imagePath:
+    //     'https://raw.githubusercontent.com/GeoHaz7/Astoria-Cocktail-Room/main/src/images/staff/owners.jpg',
+    //   title: 'Owners',
+    // },
+    {
+      name: 'Rawan Ghawali',
+      imagePath:
+        'https://raw.githubusercontent.com/GeoHaz7/Astoria-Cocktail-Room/main/src/images/staff/rawan.jpg',
+    },
+    {
+      name: 'Celine Kort',
+      imagePath:
+        'https://raw.githubusercontent.com/GeoHaz7/Astoria-Cocktail-Room/main/src/images/staff/celine.jpg',
+    },
+    {
+      name: 'Raed Kattan',
+      imagePath:
+        'https://raw.githubusercontent.com/GeoHaz7/Astoria-Cocktail-Room/main/src/images/staff/raed.jpg',
+    },
+    {
+      name: 'Yazan Khater',
+      imagePath:
+        'https://raw.githubusercontent.com/GeoHaz7/Astoria-Cocktail-Room/main/src/images/staff/yazan.jpg',
+    },
+    {
+      name: 'Ala Bannoura',
+      imagePath:
+        'https://raw.githubusercontent.com/GeoHaz7/Astoria-Cocktail-Room/main/src/images/staff/ala.jpg',
+    },
+  ];
+
   return (
     <>
       <Grid
@@ -42,7 +74,11 @@ const About = (props) => {
         </Grid>
 
         <Grid m={2} item xs={12}>
-          <img style={{ maxHeight: '30vh' }} src={cocktail} alt="cocktail" />
+          <img
+            style={{ maxHeight: '30vh' }}
+            src="https://raw.githubusercontent.com/GeoHaz7/Astoria-Cocktail-Room/main/src/images/astoriaCocktial.jpg"
+            alt="cocktail"
+          />
         </Grid>
 
         <Grid m={2} item xs={12}>
@@ -56,14 +92,12 @@ const About = (props) => {
               titleTypographyProps={{ color: 'white' }}
               title="Owners"
             ></CardHeader>
-            <CardActionArea>
-              <CardMedia component="img" image={owners} alt="green iguana" />
-              <CardContent sx={{ bgcolor: 'rgb(25,118,210,100)' }}>
-                <Typography variant="body2" color="white">
-                  Jubran-Nineveh Kort
-                </Typography>
-              </CardContent>
-            </CardActionArea>
+            <CardMedia component="img" image={owners} alt="green iguana" />
+            <CardContent sx={{ bgcolor: 'rgb(25,118,210,100)' }}>
+              <Typography variant="body2" color="white">
+                Jubran-Nineveh Kort
+              </Typography>
+            </CardContent>
           </Card>
         </Grid>
       </Grid>
@@ -76,20 +110,22 @@ const About = (props) => {
         // spacing={{ xs: 2, md: 3 }}
         columns={{ xs: 12 }}
       >
-        <Grid m={3} item xs={3}>
-          <Card sx={{ maxWidth: 345, boxShadow: 5 }}>
-            <CardActionArea>
-              <CardMedia component="img" image={rawan} alt="green iguana" />
-              <CardContent sx={{ bgcolor: 'rgb(25,118,210,100)' }}>
-                <Typography variant="body2" color="white">
-                  Rawan Ghawali
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Grid>
+        {data.map((item) => (
+          <Grid m={3} item xs={12}>
+            <Card sx={{ maxWidth: 345, boxShadow: 5 }}>
+              <CardActionArea>
+                <CardMedia component="img" image={item.imagePath} />
+                <CardContent sx={{ bgcolor: 'rgb(25,118,210,100)' }}>
+                  <Typography variant="body2" color="white">
+                    {item.name}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          </Grid>
+        ))}
 
-        <Grid m={3} item xs={3}>
+        {/* <Grid m={3} item xs={3}>
           <Card sx={{ maxWidth: 345, boxShadow: 5 }}>
             <CardActionArea>
               <CardMedia component="img" image={celine} alt="green iguana" />
@@ -136,7 +172,7 @@ const About = (props) => {
               </CardContent>
             </CardActionArea>
           </Card>
-        </Grid>
+        </Grid> */}
       </Grid>
     </>
   );
