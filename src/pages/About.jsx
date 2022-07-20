@@ -99,7 +99,11 @@ const About = () => {
         </Grid> */}
 
         <Grid m={2} item xs={12}>
-          <Typography fontFamily="san-serif" variant="h3">
+          <Typography
+            color="text.secondary"
+            fontFamily="san-serif"
+            variant="h3"
+          >
             Staff
           </Typography>
         </Grid>
@@ -107,13 +111,13 @@ const About = () => {
         <Grid m={2} item xs={9} justifyContent="center" container>
           <Card sx={{ maxWidth: 345, boxShadow: 5 }}>
             <CardHeader
-              sx={{ py: 1, px: 0, bgcolor: 'rgb(25,118,210,100)' }}
+              sx={{ py: 1, px: 0, bgcolor: 'primary.main' }}
               titleTypographyProps={{ color: 'white' }}
               title="Owners"
             ></CardHeader>
             <CardActionArea onClick={handleOpen}>
               <CardMedia component="img" image={owners} alt="green iguana" />
-              <CardContent sx={{ bgcolor: 'rgb(25,118,210,100)' }}>
+              <CardContent sx={{ bgcolor: 'primary.main' }}>
                 <Typography variant="body2" color="white">
                   Jubran-Nineveh Kort
                 </Typography>
@@ -135,7 +139,7 @@ const About = () => {
             <Card sx={{ maxWidth: 345, boxShadow: 5 }}>
               <CardActionArea onClick={handleOpen}>
                 <CardMedia component="img" image={item.imagePath} />
-                <CardContent sx={{ bgcolor: 'rgb(25,118,210,100)' }}>
+                <CardContent sx={{ bgcolor: 'primary.main' }}>
                   <Typography variant="body2" color="white">
                     {item.name}
                   </Typography>
@@ -145,7 +149,11 @@ const About = () => {
           </Grid>
         ))}
         <Grid m={2} item xs={12}>
-          <Typography fontFamily="san-serif" variant="h3">
+          <Typography
+            color="text.secondary"
+            fontFamily="san-serif"
+            variant="h3"
+          >
             Location
           </Typography>
         </Grid>
@@ -156,7 +164,7 @@ const About = () => {
             width="90%"
             height="300"
             style={{ border: 0 }}
-            allowfullscreen=""
+            allowFullscreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>

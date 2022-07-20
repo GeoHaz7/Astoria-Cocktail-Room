@@ -13,29 +13,13 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
-import { createTheme, ListItemText, ThemeProvider } from '@mui/material';
+import { ListItemText } from '@mui/material';
 
 const drawerWidth = 240;
 const navItems = ['Home', 'Photos', 'About'];
 const navItemsLink = ['', 'photos', 'about'];
 
 function Navbar(props) {
-  const theme = createTheme({
-    typography: {
-      fontFamily: [
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        '"Helvetica Neue"',
-        'Arial',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-      ].join(','),
-    },
-  });
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -78,20 +62,18 @@ function Navbar(props) {
     <Box sx={{ display: 'flex' }}>
       <AppBar position="sticky" component="nav">
         <Toolbar>
-          <ThemeProvider theme={theme}>
-            <Typography
-              variant="h4"
-              component="div"
-              sx={{
-                fontFamily: 'serif',
-                flexGrow: 1,
-                display: { xs: 'block', sm: 'block' },
-                m: 1,
-              }}
-            >
-              Astoria Cocktail Room
-            </Typography>
-          </ThemeProvider>
+          <Typography
+            variant="h4"
+            component="div"
+            sx={{
+              fontFamily: 'serif',
+              flexGrow: 1,
+              display: { xs: 'block', sm: 'block' },
+              m: 1,
+            }}
+          >
+            Astoria Cocktail Room
+          </Typography>
           {/* <Box
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block' }, m: 1 }}
@@ -145,13 +127,5 @@ function Navbar(props) {
     </Box>
   );
 }
-
-Navbar.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
-};
 
 export default Navbar;

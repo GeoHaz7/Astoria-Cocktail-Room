@@ -5,20 +5,14 @@ import About from './pages/About';
 import Navbar from './pages/Navbar';
 import Error from './pages/Error';
 
-import './App.css';
 import Photos from './pages/Photos';
 import Footer from './pages/Footer';
 import { Box } from '@mui/material';
+import './App.css';
 
 function App() {
   return (
-    <Box
-      sx={{
-        position: 'relative',
-        minHeight: '100vh',
-        paddingBottom: '2.5rem',
-      }}
-    >
+    <Box className="body">
       <Router>
         <Navbar />
 

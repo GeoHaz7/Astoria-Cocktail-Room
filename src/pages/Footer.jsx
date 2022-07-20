@@ -9,7 +9,6 @@ import React from 'react';
 const Footer = () => {
   return (
     <Grid
-      bgcolor="rgb(25,118,210,100)"
       container
       direction="row"
       justifyContent="space-between"
@@ -18,11 +17,12 @@ const Footer = () => {
         position: 'absolute',
         bottom: '0',
         width: '100%',
+        bgcolor: 'primary.main',
       }}
     >
       <Grid item marginLeft={1}>
         <Typography color="white" variant="span">
-          &copy;Astoria Cocktail Room 2022
+          &copy; Astoria Cocktail Room 2022
         </Typography>
       </Grid>
       <Grid item marginRight={1}>
