@@ -7,7 +7,6 @@ import Error from './pages/Error';
 
 import './App.css';
 import Photos from './pages/Photos';
-import Images from './pages/Images';
 import Footer from './pages/Footer';
 import { Box } from '@mui/material';
 
@@ -27,7 +26,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/photos" element={<Photos />} />
-          {/* <Route path="/images" element={<Images />} /> */}
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />

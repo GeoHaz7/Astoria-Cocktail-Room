@@ -12,7 +12,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import logo from '../images/logo.png';
 import { Link } from 'react-router-dom';
 import { createTheme, ListItemText, ThemeProvider } from '@mui/material';
 
