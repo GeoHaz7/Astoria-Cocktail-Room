@@ -17,63 +17,46 @@ import { useEffect } from 'react';
 // import CallIcon from '@mui/icons-material/Call';
 
 const Home = () => {
-  const [data, setData] = useState([]);
-  // const [base64String, setBase64String] = useState('');
+  // const [data, setData] = useState([]);
+  // const [image, setImage] = useState({ preview: '', data: '' });
+  // const [status, setStatus] = useState('');
 
-  useEffect(() => {
-    axios
-      .get('http://localhost:5000')
-      .then((res) => setData(res.data))
-      .catch((err) => {
-        console.log(err);
-      });
-    console.log(data);
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get('http://localhost:5000')
+  //     .then((res) => setData(res.data))
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
 
-  // const submithandler = (e) => {
+  // const handleSubmit = async (e) => {
   //   e.preventDefault();
-  //   const config = {
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
+  //   let formData = new FormData();
+  //   formData.append('testImage', image.data);
+  //   axios
+  //     .post('http://localhost:5000', formData)
+  //     .then((res) => setStatus(res.statusText))
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
+
+  // const handleFileChange = (e) => {
+  //   const img = {
+  //     preview: URL.createObjectURL(e.target.files[0]),
+  //     data: e.target.files[0],
   //   };
-
-  //   axios.post(`http://localhost:5000/api/uploads`, image, config);
+  //   setImage(img);
   // };
 
-  // const [image, setImage] = useState('');
-  // const [uploading, setUploading] = useState(false);
-
-  // const uploadFileHandler = async (e) => {
-  //   const file = e.target.files[0];
-
-  //   const formData = new FormData();
-
-  //   formData.append('image', file);
-  //   setUploading(true);
-
-  //   try {
-  //     const config = {
-  //       headers: {
-  //         'Content-Type': 'multipart/for-data',
-  //       },
-  //     };
-
-  //     const { data } = await axios.post('/api/upload', formData, config);
-  //     setImage(data);
-  //     setUploading(false);
-  //   } catch (error) {
-  //     console.error(error);
-  //     setUploading(false);
-  //   }
-  // };
   return (
     <Box mx={2}>
       <Card className="homeCard" sx={{ boxShadow: 0 }}>
         <CardMedia
           component="img"
           width={100}
-          image="https://raw.githubusercontent.com/GeoHaz7/Astoria-Cocktail-Room/main/src/images/background.jpg"
+          image="https://raw.githubusercontent.com/GeoHaz7/Astoria-Cocktail-Room/main/frontend/src/images/background.jpg"
           alt="homeImage"
         />
 
@@ -99,6 +82,19 @@ const Home = () => {
         </CardActions>
       </Card>
 
+      {/* <div className="App">
+        <h1>Upload to server</h1>
+        {image.preview && (
+          <img src={image.preview} width="100" height="100" alt="" />
+        )}
+        <hr></hr>
+        <form onSubmit={handleSubmit}>
+          <input type="file" name="file" onChange={handleFileChange}></input>
+          <button type="submit">Submit</button>
+        </form>
+        {status && <h4>{status}</h4>}
+      </div>
+
       {data.map((singleData) => {
         const base64String = Buffer.from(singleData.img.data.data).toString(
           'base64'
@@ -111,30 +107,7 @@ const Home = () => {
             width="100%"
           />
         );
-      })}
-
-      {/* <Form onSubmit={submithandler}>
-        <Form.Group controlId="image">
-          <Form.Label>Image</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter image url"
-            value={image}
-            onChange={(e) => setImage(e.target.value)}
-          ></Form.Control>
-          <Form.Control
-            type="file"
-            label="Choose file"
-            custom
-            onChange={uploadFileHandler}
-          />
-          {uploading && <h1>Loading</h1>}
-        </Form.Group>
-
-        <Button type="submit" variant="primary">
-          Update
-        </Button>
-      </Form> */}
+      })} */}
     </Box>
   );
 };

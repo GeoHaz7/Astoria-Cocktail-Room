@@ -34,27 +34,27 @@ const About = () => {
     {
       name: 'Rawan Ghawali',
       imagePath:
-        'https://raw.githubusercontent.com/GeoHaz7/Astoria-Cocktail-Room/main/src/images/staff/rawan.jpg',
+        'https://raw.githubusercontent.com/GeoHaz7/Astoria-Cocktail-Room/main/frontend/src/images/staff/rawan.jpg',
     },
     {
       name: 'Celine Kort',
       imagePath:
-        'https://raw.githubusercontent.com/GeoHaz7/Astoria-Cocktail-Room/main/src/images/staff/celine.jpg',
+        'https://raw.githubusercontent.com/GeoHaz7/Astoria-Cocktail-Room/main/frontend/src/images/staff/celine.jpg',
     },
     {
       name: 'Raed Kattan',
       imagePath:
-        'https://raw.githubusercontent.com/GeoHaz7/Astoria-Cocktail-Room/main/src/images/staff/raed.jpg',
+        'https://raw.githubusercontent.com/GeoHaz7/Astoria-Cocktail-Room/main/frontend/src/images/staff/raed.jpg',
     },
     {
       name: 'Yazan Khater',
       imagePath:
-        'https://raw.githubusercontent.com/GeoHaz7/Astoria-Cocktail-Room/main/src/images/staff/yazan.jpg',
+        'https://raw.githubusercontent.com/GeoHaz7/Astoria-Cocktail-Room/main/frontend/src/images/staff/yazan.jpg',
     },
     {
       name: 'Ala Bannoura',
       imagePath:
-        'https://raw.githubusercontent.com/GeoHaz7/Astoria-Cocktail-Room/main/src/images/staff/ala.jpg',
+        'https://raw.githubusercontent.com/GeoHaz7/Astoria-Cocktail-Room/main/frontend/src/images/staff/ala.jpg',
     },
   ];
 
